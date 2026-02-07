@@ -111,6 +111,7 @@ This project was built as a practical full-stack assignment, with a focus on **c
 └── README.md
 
 ***
+
 ## ⚙️ Running the Project Locally
 
 Backend Setup
@@ -137,10 +138,11 @@ Swagger UI:
 ```text
 http://127.0.0.1:8000/docs
 ```
-
 ⸻
 
-Frontend Setup
+***
+
+## Frontend Setup
 
 ```text
 cd frontend
@@ -161,7 +163,7 @@ http://localhost:5173
 ***
 ⸻
 
-🧪 API Documentation
+## 🧪 API Documentation
 
 The backend API is fully documented using Swagger UI, which allows:
 	•	Exploring endpoints
@@ -198,5 +200,5 @@ Available at:
 ✔ Fully deployed
 ✔ Production-ready structure
 ✔ Clean and maintainable codebase
-
+***
 ⸻
