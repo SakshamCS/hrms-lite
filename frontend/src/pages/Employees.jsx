@@ -52,14 +52,17 @@ function Employees() {
     }
   };
 
-  const deleteEmployee = async (id) => {
+const deleteEmployee = async (id) => {
+    if (!id) return; // Safety check
     if (!confirm("Delete this employee?")) return;
+    
     try {
-      // Changed to use the database primary key 'id'
       await api.delete(`/employees/${id}`);
+      // Refresh the list after successful deletion
       fetchEmployees();
     } catch (err) {
-      alert("Failed to delete employee");
+      console.error("Delete Error:", err);
+      alert("Failed to delete: " + (err.response?.data?.detail || "Server Error"));
     }
   };
 
