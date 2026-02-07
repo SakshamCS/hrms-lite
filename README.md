@@ -8,14 +8,14 @@ This project was built as a practical full-stack assignment, with a focus on cla
 ⸻
 
 🚀 Live Demo
-```text
+
 	•	Frontend (Vercel):
 👉 
 	•	Backend API (Render):
 👉 
 	•	API Documentation (Swagger UI):
 👉 /docs
-```
+
 ⸻
 
 🧩 Features
