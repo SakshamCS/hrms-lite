@@ -109,7 +109,7 @@ This project was built as a practical full-stack assignment, with a focus on **c
 │   └── ...
 │
 └── README.md
-
+```
 ***
 
 ## ⚙️ Running the Project Locally
