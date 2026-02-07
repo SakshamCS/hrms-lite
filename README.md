@@ -8,18 +8,20 @@ This project was built as a practical full-stack assignment, with a focus on cla
 ⸻
 
 🚀 Live Demo
+```text
 	•	Frontend (Vercel):
 👉 
 	•	Backend API (Render):
 👉 
 	•	API Documentation (Swagger UI):
 👉 /docs
-
+```
 ⸻
 
 🧩 Features
 
 Employee Management
+```text
 	•	Add new employees (unique Employee ID)
 	•	View all employees
 	•	Delete employees
@@ -27,44 +29,50 @@ Employee Management
 	•	Required fields
 	•	Valid email format
 	•	Duplicate employee handling
-
+```
 Attendance Management
+```text
 	•	Mark daily attendance (Present / Absent)
 	•	Update attendance for the same employee & date (no duplicates)
 	•	View attendance history per employee
 	•	Search employees by name or employee ID for scalable selection
-
+```
 UX & UI
+```text
 	•	Clean, professional interface
 	•	Search-based employee selection (scales better than dropdowns)
 	•	Loading, empty, and error states
 	•	Reusable UI components
 	•	Responsive layout
-
+```
 ⸻
 
 🛠️ Tech Stack
 
 Frontend
+```text
 	•	React (Vite)
 	•	Tailwind CSS
 	•	Axios
 	•	React Router
-
+```
 Backend
+```text
 	•	FastAPI
 	•	SQLAlchemy
 	•	PostgreSQL
 	•	Swagger UI (OpenAPI)
-
+```
 Deployment
+```text
 	•	Frontend: Vercel
 	•	Backend: Render
 	•	Database: Render PostgreSQL
-
+```
 ⸻
 
 🧠 Design Decisions
+```text
 	•	No authentication: Assumes a single admin user (as per assignment scope)
 	•	Attendance upsert logic:
 One attendance record per employee per date (updates allowed)
@@ -72,7 +80,7 @@ One attendance record per employee per date (updates allowed)
 Faster UX and simpler architecture for this scale
 	•	Swagger UI enabled:
 Intentionally kept on for API exploration and review
-
+```
 ⸻
 
 📁 Project Structure
