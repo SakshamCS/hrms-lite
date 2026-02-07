@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
-from datetime import date, timedelta  # Added timedelta for the buffer
+from datetime import date  # Added for date comparison
 
 from app.database import get_db
 from app import models, schemas
@@ -16,16 +16,13 @@ def mark_attendance(
     attendance: schemas.AttendanceCreate,
     db: Session = Depends(get_db)
 ):
-    # --- UPDATED: Future Date Validation (+1 Day Buffer) ---
-    # This allows today and tomorrow (to handle IST vs UTC server lag)
-    max_allowed_date = date.today() + timedelta(days=1)
-    
-    if attendance.date > max_allowed_date:
+    # --- NEW: Future Date Validation ---
+    if attendance.date > date.today():
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Attendance date is too far in the future. Max allowed is {max_allowed_date}."
+            detail=f"Attendance date cannot be in the future. Today is {date.today()}."
         )
-    # -------------------------------------------------------
+    # -----------------------------------
 
     # 1. Check employee exists
     employee = db.query(models.Employee).filter(
