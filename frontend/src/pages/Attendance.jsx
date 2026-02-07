@@ -12,8 +12,11 @@ function Attendance() {
   const [search, setSearch] = useState("");
   const [filteredEmployees, setFilteredEmployees] = useState([]);
 
+  // Calculate today's date for the 'max' attribute
+  const today = new Date().toISOString().split("T")[0];
+
   const [form, setForm] = useState({
-    date: "",
+    date: today, // Default to today's date
     status: "Present",
   });
 
@@ -84,7 +87,6 @@ function Attendance() {
           onChange={(e) => setSearch(e.target.value)}
         />
 
-        {/* Nice touch */}
         <p className="text-xs text-gray-500">
           Search by employee name or employee ID
         </p>
@@ -123,6 +125,7 @@ function Attendance() {
               label="Date"
               type="date"
               value={form.date}
+              max={today} // This blocks selection of future dates in the calendar
               onChange={(e) => setForm({ ...form, date: e.target.value })}
               required
             />
