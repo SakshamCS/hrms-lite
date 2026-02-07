@@ -1,4 +1,4 @@
-🧑‍💼 HRMS Lite – Full-Stack Application
+###🧑‍💼 HRMS Lite – Full-Stack Application
 
 A lightweight Human Resource Management System (HRMS Lite) built as a full-stack web application.
 The system allows an admin to manage employees and track daily attendance through a clean, professional UI and a RESTful backend.
@@ -7,7 +7,7 @@ This project was built as a practical full-stack assignment, with a focus on cla
 
 ⸻
 
-🚀 Live Demo
+###🚀 Live Demo
 
 	•	Frontend (Vercel):
 👉 
@@ -18,10 +18,9 @@ This project was built as a practical full-stack assignment, with a focus on cla
 
 ⸻
 
-🧩 Features
+###🧩 Features
 
-Employee Management
-```text
+###Employee Management
 	•	Add new employees (unique Employee ID)
 	•	View all employees
 	•	Delete employees
@@ -29,14 +28,14 @@ Employee Management
 	•	Required fields
 	•	Valid email format
 	•	Duplicate employee handling
-```
-Attendance Management
-```text
+
+###Attendance Management
+
 	•	Mark daily attendance (Present / Absent)
 	•	Update attendance for the same employee & date (no duplicates)
 	•	View attendance history per employee
 	•	Search employees by name or employee ID for scalable selection
-```
+	
 UX & UI
 ```text
 	•	Clean, professional interface
