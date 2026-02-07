@@ -12,18 +12,11 @@ function Attendance() {
   const [search, setSearch] = useState("");
   const [filteredEmployees, setFilteredEmployees] = useState([]);
 
-  // --- CALCULATION FOR TODAY AND TOMORROW ---
-  const todayObj = new Date();
-  const todayStr = todayObj.toLocaleDateString('en-CA'); 
-  
-  // Calculate tomorrow for the calendar 'max' limit
-  const tomorrowObj = new Date();
-  tomorrowObj.setDate(tomorrowObj.getDate() + 1);
-  const maxDateLimit = tomorrowObj.toLocaleDateString('en-CA');
-  // ------------------------------------------
+  // Calculate today's date for the 'max' attribute
+  const today = new Date().toISOString().split("T")[0];
 
   const [form, setForm] = useState({
-    date: todayStr, // Default to today's date
+    date: today, // Default to today's date
     status: "Present",
   });
 
@@ -132,7 +125,7 @@ function Attendance() {
               label="Date"
               type="date"
               value={form.date}
-              max={maxDateLimit} // Allows selecting today and tomorrow
+              max={today} // This blocks selection of future dates in the calendar
               onChange={(e) => setForm({ ...form, date: e.target.value })}
               required
             />
@@ -175,3 +168,18 @@ function Attendance() {
                   <td
                     className={`p-3 font-medium ${
                       r.status === "Present" ? "text-green-600" : "text-red-600"
+                    }`}
+                  >
+                    {r.status}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default Attendance;
