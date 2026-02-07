@@ -93,6 +93,7 @@ hrms-lite/
 │   └── package.json
 ├── README.md
 └── .gitignore
+```
 ⸻
 
 ⚙️ Running the Project Locally
@@ -104,23 +105,23 @@ cd backend
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-
+```
 Set environment variable:
-
+```text
 export DATABASE_URL=postgresql://<user>:<password>@<host>/<db>
-
+```
 Run server:
-
+```text
 uvicorn app.main:app --reload
-
+```
 Backend runs at:
-
+```text
 http://127.0.0.1:8000
-
+```
 Swagger UI:
-
+```text
 http://127.0.0.1:8000/docs
-
+```
 
 ⸻
 
@@ -129,19 +130,19 @@ Frontend Setup
 ```text
 cd frontend
 npm install
-
+```
 Create .env file:
-
+```text
 VITE_API_URL=http://127.0.0.1:8000
-
+```
 Run frontend:
-
+```text
 npm run dev
-
+```
 Frontend runs at:
-
+```text
 http://localhost:5173
-
+```
 
 ⸻
 
