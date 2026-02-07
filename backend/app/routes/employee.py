@@ -31,19 +31,21 @@ def create_employee(
 
 @router.delete("/{id}", status_code=status.HTTP_200_OK)
 def delete_employee(id: int, db: Session = Depends(get_db)):
-    # Look for the primary key 'id'
+    # 1. Find the employee
     employee = db.query(models.Employee).filter(models.Employee.id == id).first()
 
     if not employee:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Employee not found"
-        )
+        raise HTTPException(status_code=404, detail="Employee not found")
 
     try:
+        # 2. Delete linked attendance records first to avoid Foreign Key errors
+        db.query(models.Attendance).filter(models.Attendance.employee_id == employee.employee_id).delete()
+        
+        # 3. Now delete the employee
         db.delete(employee)
         db.commit()
-        return {"message": "Deleted"}
+        return {"message": "Employee and their attendance records deleted"}
     except Exception as e:
         db.rollback()
-        raise HTTPException(status_code=500, detail=str(e))
+        print(f"DELETE ERROR: {str(e)}") # This will show up in Render Logs
+        raise HTTPException(status_code=500, detail="Database error: Check if employee has linked records")
