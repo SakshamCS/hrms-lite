@@ -12,10 +12,12 @@ def on_startup():
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # later you can restrict to Vercel URL
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 app.include_router(employee.router)
 app.include_router(attendance.router)
 
