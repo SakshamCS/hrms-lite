@@ -11,13 +11,13 @@ This project was built as a practical full-stack assignment, with a focus on **c
 ## 🚀 Live Demo
 
 - **Frontend (Vercel):**  
-  👉 <ADD_FRONTEND_URL>
+  👉 https://hrms-lite-amber.vercel.app/
 
 - **Backend API (Render):**  
-  👉 <ADD_BACKEND_URL>
+  👉 https://hrms-backend-ab54.onrender.com
 
 - **API Documentation (Swagger UI):**  
-  👉 `<BACKEND_URL>/docs`
+  👉 `https://hrms-backend-ab54.onrender.com/docs`
 
 ***
 
