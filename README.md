@@ -172,7 +172,7 @@ The backend API is fully documented using Swagger UI, which allows:
 
 Available at:
 
-/docs
+https://hrms-backend-ab54.onrender.com/docs
 
 
 ⸻
