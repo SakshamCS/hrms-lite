@@ -54,67 +54,39 @@ function Employees() {
 
   const deleteEmployee = async (id) => {
     if (!confirm("Delete this employee?")) return;
-    await api.delete(`/employees/${id}`);
-    fetchEmployees();
+    try {
+      // Changed to use the database primary key 'id'
+      await api.delete(`/employees/${id}`);
+      fetchEmployees();
+    } catch (err) {
+      alert("Failed to delete employee");
+    }
   };
 
   return (
     <div className="space-y-8">
       <h2 className="text-2xl font-semibold">Employees</h2>
 
-      {/* Create Employee */}
-      <form
-        onSubmit={createEmployee}
-        className="bg-white p-6 rounded-md shadow space-y-4"
-      >
+      <form onSubmit={createEmployee} className="bg-white p-6 rounded-md shadow space-y-4">
         <div className="grid grid-cols-2 gap-4">
-          <Input
-            label="Employee ID"
-            name="employee_id"
-            value={form.employee_id}
-            onChange={handleChange}
-            required
-          />
-          <Input
-            label="Full Name"
-            name="full_name"
-            value={form.full_name}
-            onChange={handleChange}
-            required
-          />
-          <Input
-            label="Email"
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
-          <Input
-            label="Department"
-            name="department"
-            value={form.department}
-            onChange={handleChange}
-            required
-          />
+          <Input label="Employee ID" name="employee_id" value={form.employee_id} onChange={handleChange} required />
+          <Input label="Full Name" name="full_name" value={form.full_name} onChange={handleChange} required />
+          <Input label="Email" type="email" name="email" value={form.email} onChange={handleChange} required />
+          <Input label="Department" name="department" value={form.department} onChange={handleChange} required />
         </div>
         <Button type="submit">Add Employee</Button>
       </form>
 
-      {/* States */}
       {loading && <p>Loading employees...</p>}
       {error && <p className="text-red-600">{error}</p>}
-      {!loading && employees.length === 0 && (
-        <p className="text-gray-500">No employees found.</p>
-      )}
+      {!loading && employees.length === 0 && <p className="text-gray-500">No employees found.</p>}
 
-      {/* Table */}
       {!loading && employees.length > 0 && (
         <div className="bg-white rounded-md shadow overflow-hidden">
           <table className="w-full">
             <thead className="bg-gray-50">
               <tr>
-                <th className="p-3 text-left">ID</th>
+                <th className="p-3 text-left">Emp ID</th>
                 <th className="p-3 text-left">Name</th>
                 <th className="p-3 text-left">Email</th>
                 <th className="p-3 text-left">Department</th>
@@ -123,16 +95,13 @@ function Employees() {
             </thead>
             <tbody>
               {employees.map((emp) => (
-                <tr key={emp.employee_id} className="border-t">
+                <tr key={emp.id} className="border-t">
                   <td className="p-3">{emp.employee_id}</td>
                   <td className="p-3">{emp.full_name}</td>
                   <td className="p-3">{emp.email}</td>
                   <td className="p-3">{emp.department}</td>
                   <td className="p-3 text-right">
-                    <Button
-                      variant="danger"
-                      onClick={() => deleteEmployee(emp.employee_id)}
-                    >
+                    <Button variant="danger" onClick={() => deleteEmployee(emp.id)}>
                       Delete
                     </Button>
                   </td>
