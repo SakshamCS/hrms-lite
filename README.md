@@ -77,36 +77,29 @@ Intentionally kept on for API exploration and review
 
 📁 Project Structure
 
-`
-.
+```text
+hrms-lite/
 ├── backend/
 │   ├── app/
-│   │   ├── main.py
-│   │   ├── database.py
+│   │   ├── routers/
 │   │   ├── models.py
 │   │   ├── schemas.py
-│   │   └── routes/
+│   │   └── main.py
 │   ├── requirements.txt
-│   └── ...
-│
+│   └── README.md
 ├── frontend/
 │   ├── src/
-│   │   ├── api/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── layouts/
-│   │   └── ...
-│   ├── vite.config.js
-│   └── ...
-│
-└── README.md
-`
+│   ├── index.html
+│   └── package.json
+├── README.md
+└── .gitignore
 ⸻
 
 ⚙️ Running the Project Locally
 
 Backend Setup
 
+```text
 cd backend
 python -m venv venv
 source venv/bin/activate
@@ -133,6 +126,7 @@ http://127.0.0.1:8000/docs
 
 Frontend Setup
 
+```text
 cd frontend
 npm install
 
