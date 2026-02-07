@@ -17,7 +17,7 @@ This project was built as a practical full-stack assignment, with a focus on **c
   👉 https://hrms-backend-ab54.onrender.com
 
 - **API Documentation (Swagger UI):**  
-  👉 `https://hrms-backend-ab54.onrender.com/docs`
+  👉 https://hrms-backend-ab54.onrender.com/docs
 
 ***
 
