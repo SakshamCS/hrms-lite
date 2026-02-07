@@ -8,11 +8,11 @@ This project was built as a practical full-stack assignment, with a focus on cla
 ⸻
 
 🚀 Live Demo
-• Frontend (Vercel):
-👉
-• Backend API (Render):
-👉
-• API Documentation (Swagger UI):
+	•	Frontend (Vercel):
+👉 
+	•	Backend API (Render):
+👉 
+	•	API Documentation (Swagger UI):
 👉 /docs
 
 ⸻
@@ -20,85 +20,87 @@ This project was built as a practical full-stack assignment, with a focus on cla
 🧩 Features
 
 Employee Management
-• Add new employees (unique Employee ID)
-• View all employees
-• Delete employees
-• Server-side validation:
-• Required fields
-• Valid email format
-• Duplicate employee handling
+	•	Add new employees (unique Employee ID)
+	•	View all employees
+	•	Delete employees
+	•	Server-side validation:
+	•	Required fields
+	•	Valid email format
+	•	Duplicate employee handling
 
 Attendance Management
-• Mark daily attendance (Present / Absent)
-• Update attendance for the same employee & date (no duplicates)
-• View attendance history per employee
-• Search employees by name or employee ID for scalable selection
+	•	Mark daily attendance (Present / Absent)
+	•	Update attendance for the same employee & date (no duplicates)
+	•	View attendance history per employee
+	•	Search employees by name or employee ID for scalable selection
 
 UX & UI
-• Clean, professional interface
-• Search-based employee selection (scales better than dropdowns)
-• Loading, empty, and error states
-• Reusable UI components
-• Responsive layout
+	•	Clean, professional interface
+	•	Search-based employee selection (scales better than dropdowns)
+	•	Loading, empty, and error states
+	•	Reusable UI components
+	•	Responsive layout
 
 ⸻
 
 🛠️ Tech Stack
 
 Frontend
-• React (Vite)
-• Tailwind CSS
-• Axios
-• React Router
+	•	React (Vite)
+	•	Tailwind CSS
+	•	Axios
+	•	React Router
 
 Backend
-• FastAPI
-• SQLAlchemy
-• PostgreSQL
-• Swagger UI (OpenAPI)
+	•	FastAPI
+	•	SQLAlchemy
+	•	PostgreSQL
+	•	Swagger UI (OpenAPI)
 
 Deployment
-• Frontend: Vercel
-• Backend: Render
-• Database: Render PostgreSQL
+	•	Frontend: Vercel
+	•	Backend: Render
+	•	Database: Render PostgreSQL
 
 ⸻
 
 🧠 Design Decisions
-• No authentication: Assumes a single admin user (as per assignment scope)
-• Attendance upsert logic:
+	•	No authentication: Assumes a single admin user (as per assignment scope)
+	•	Attendance upsert logic:
 One attendance record per employee per date (updates allowed)
-• Frontend filtering for employee search:
+	•	Frontend filtering for employee search:
 Faster UX and simpler architecture for this scale
-• Swagger UI enabled:
+	•	Swagger UI enabled:
 Intentionally kept on for API exploration and review
 
 ⸻
 
 📁 Project Structure
 
+<
 .
 ├── backend/
-│ ├── app/
-│ │ ├── main.py
-│ │ ├── database.py
-│ │ ├── models.py
-│ │ ├── schemas.py
-│ │ └── routes/
-│ ├── requirements.txt
-│ └── ...
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── database.py
+│   │   ├── models.py
+│   │   ├── schemas.py
+│   │   └── routes/
+│   ├── requirements.txt
+│   └── ...
 │
 ├── frontend/
-│ ├── src/
-│ │ ├── api/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ ├── layouts/
-│ │ └── ...
-│ ├── vite.config.js
-│ └── ...
+│   ├── src/
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── layouts/
+│   │   └── ...
+│   ├── vite.config.js
+│   └── ...
 │
 └── README.md
+>
 
 ⸻
 
@@ -127,6 +129,7 @@ Swagger UI:
 
 http://127.0.0.1:8000/docs
 
+
 ⸻
 
 Frontend Setup
@@ -146,35 +149,37 @@ Frontend runs at:
 
 http://localhost:5173
 
+
 ⸻
 
 🧪 API Documentation
 
 The backend API is fully documented using Swagger UI, which allows:
-• Exploring endpoints
-• Testing requests
-• Viewing request/response schemas
+	•	Exploring endpoints
+	•	Testing requests
+	•	Viewing request/response schemas
 
 Available at:
 
 /docs
 
+
 ⸻
 
 ⚠️ Assumptions & Limitations
-• Single admin user (no authentication)
-• Leave management, payroll, and roles are out of scope
-• Designed for small–to–medium internal HR usage
-• Frontend search is client-side (sufficient for current scale)
+	•	Single admin user (no authentication)
+	•	Leave management, payroll, and roles are out of scope
+	•	Designed for small–to–medium internal HR usage
+	•	Frontend search is client-side (sufficient for current scale)
 
 ⸻
 
 🌱 Possible Enhancements
-• Authentication & role-based access
-• Attendance analytics & dashboards
-• Pagination for large datasets
-• Bulk attendance entry
-• Server-side search for very large organizations
+	•	Authentication & role-based access
+	•	Attendance analytics & dashboards
+	•	Pagination for large datasets
+	•	Bulk attendance entry
+	•	Server-side search for very large organizations
 
 ⸻
 
