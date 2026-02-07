@@ -12,11 +12,8 @@ def on_startup():
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",          
-        "https://your-app.vercel.app"   
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],           # Allows every domain (Vercel, Localhost, etc.)
+    allow_credentials=False,       # Turned off as requested
     allow_methods=["*"],
     allow_headers=["*"],
 )
