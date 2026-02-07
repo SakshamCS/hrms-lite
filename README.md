@@ -77,7 +77,7 @@ Intentionally kept on for API exploration and review
 
 📁 Project Structure
 
-<
+`
 .
 ├── backend/
 │   ├── app/
@@ -100,8 +100,7 @@ Intentionally kept on for API exploration and review
 │   └── ...
 │
 └── README.md
->
-
+`
 ⸻
 
 ⚙️ Running the Project Locally
