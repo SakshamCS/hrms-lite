@@ -31,21 +31,23 @@ def create_employee(
 
 @router.delete("/{id}", status_code=status.HTTP_200_OK)
 def delete_employee(id: int, db: Session = Depends(get_db)):
-    # 1. Find the employee
+    # 1. Fetch the employee first
     employee = db.query(models.Employee).filter(models.Employee.id == id).first()
 
     if not employee:
         raise HTTPException(status_code=404, detail="Employee not found")
 
     try:
-        # 2. Delete linked attendance records first to avoid Foreign Key errors
+        # 2. DELETE LINKED ATTENDANCE FIRST
+        # We use employee.employee_id because that's what the attendance table references
         db.query(models.Attendance).filter(models.Attendance.employee_id == employee.employee_id).delete()
         
-        # 3. Now delete the employee
+        # 3. NOW DELETE THE EMPLOYEE
         db.delete(employee)
         db.commit()
-        return {"message": "Employee and their attendance records deleted"}
+        return {"message": "Employee and their attendance records deleted successfully"}
     except Exception as e:
         db.rollback()
-        print(f"DELETE ERROR: {str(e)}") # This will show up in Render Logs
-        raise HTTPException(status_code=500, detail="Database error: Check if employee has linked records")
+        # This will help you see the exact error in Render logs if it fails again
+        print(f"Delete Error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Could not delete employee due to database constraint")
